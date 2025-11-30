@@ -1,0 +1,856 @@
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/zones/public.xml (deflated 38%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/zones/public.xml.old (deflated 38%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/ipsets/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/lockdown-whitelist.xml (deflated 35%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/policies/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/firewalld.conf (deflated 56%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/triggers/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/triggers/dimm-error-trigger (deflated 49%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/triggers/page-error-trigger (deflated 49%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/triggers/socket-memory-error-trigger (deflated 48%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/triggers/cache-error-trigger (deflated 45%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/mcelog/mcelog.conf (deflated 53%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/smartmontools/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/smartmontools/smartd_warning.d/ (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/smartmontools/smartd.conf (deflated 59%)
+  adding: root/CH117310-Precheck/conf_backup/bkp-etc/smartmontools/smartd_warning.sh (deflated 64%)
+  adding: root/CH117310-Precheck/conf_backup/crm_status (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/crm-config-backup.xml (stored 0%)
+  adding: root/CH117310-Precheck/conf_backup/List-Of-Services (deflated 83%)
+##########################################################################################
+##################### PRECHECKS DONE #####################################################
+#########################################################################################3
+The Prechecks Command Output and configuration file backup done at location /root/CH117310-Precheck on hmsi-21falcdb-td.
+You can copy this file /root/CH117310-Precheck/hmsi-21falcdb-td-30NOV25.1116-Prechecks-backup.zip Out of this server
+##########################################################################################
+[root@hmsi-21falcdb-td ~]# ls
+anaconda-ks.cfg     crontab.3075140.bkp  Downloads        index.html.1  index.html.4  initial-setup-ks.cfg  lssecfixes           Pictures          Templates
+CH117310-Precheck   Desktop              duplicateUID.sh  index.html.2  index.html.5  Linux_Precheck.sh     lz_063007012_lx8266  Public            Videos
+crontab.121677.bkp  Documents            index.html       index.html.3  index.html.6  Lssec                 Music                secfixdb.RedHat8
+[root@hmsi-21falcdb-td ~]# cat /etc/os-release
+NAME="Red Hat Enterprise Linux"
+VERSION="8.10 (Ootpa)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="8.10"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Red Hat Enterprise Linux 8.10 (Ootpa)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:8::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 8"
+REDHAT_BUGZILLA_PRODUCT_VERSION=8.10
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="8.10"
+[root@hmsi-21falcdb-td ~]# clear
+[root@hmsi-21falcdb-td ~]# hostname -i;
+10.116.93.71
+[root@hmsi-21falcdb-td ~]# date;
+Sun Nov 30 11:19:07 IST 2025
+[root@hmsi-21falcdb-td ~]# ifconfig -a;
+ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1350
+        inet 10.116.93.71  netmask 255.255.255.128  broadcast 10.116.93.127
+        inet6 fe80::250:56ff:fe84:6a47  prefixlen 64  scopeid 0x20<link>
+        ether 00:50:56:84:6a:47  txqueuelen 1000  (Ethernet)
+        RX packets 3133405201  bytes 1873007935507 (1.7 TiB)
+        RX errors 0  dropped 7658  overruns 0  frame 0
+        TX packets 1901620952  bytes 377896735509 (351.9 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 85927789  bytes 189267667749 (176.2 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 85927789  bytes 189267667749 (176.2 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:30:ff:03  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@hmsi-21falcdb-td ~]# cat /etc/*release;
+NAME="Red Hat Enterprise Linux"
+VERSION="8.10 (Ootpa)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="8.10"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Red Hat Enterprise Linux 8.10 (Ootpa)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:8::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 8"
+REDHAT_BUGZILLA_PRODUCT_VERSION=8.10
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="8.10"
+Red Hat Enterprise Linux release 8.10 (Ootpa)
+Red Hat Enterprise Linux release 8.10 (Ootpa)
+[root@hmsi-21falcdb-td ~]# uname -a;
+Linux hmsi-21falcdb-td 4.18.0-553.30.1.el8_10.x86_64 #1 SMP Fri Nov 15 03:46:25 EST 2024 x86_64 x86_64 x86_64 GNU/Linux
+[root@hmsi-21falcdb-td ~]# free -mh;
+              total        used        free      shared  buff/cache   available
+Mem:           46Gi       6.2Gi       1.2Gi        21Gi        39Gi        18Gi
+Swap:          25Gi       1.8Gi        24Gi
+[root@hmsi-21falcdb-td ~]# cat /etc/fstab;
+
+#
+# /etc/fstab
+# Created by anaconda on Wed Jun  8 18:11:12 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rootvg-rootlv /                       xfs     defaults        0 0
+UUID=fcea554e-42c6-48d8-9724-2ee9a57264d0 /boot                   xfs     defaults        0 0
+UUID=6386-A503          /boot/efi               vfat    umask=0077,shortname=winnt 0 2
+/dev/mapper/rootvg-homelv /home                   xfs     defaults,nodev        0 0
+/dev/mapper/rootvg-optlv /opt                    xfs     defaults        0 0
+/dev/mapper/rootvg-tmplv /tmp                    xfs     defaults,nodev,noexec,nosuid        0 0
+/dev/mapper/rootvg-varlv /var                    xfs     defaults        0 0
+/dev/mapper/rootvg-swaplv none                    swap    defaults        0 0
+/dev/mapper/rootvg-tivolilv /tivolimnt           xfs     defaults       0 0
+#/dev/mapper/datavg--u01-datalv--u01 /u01       ext4       defaults       0 0
+#/dev/mapper/datavg--u02-datalv--u02 /u02       ext4       defaults       0 0
+#/dev/mapper/datavg--u03-datalv--u03 /u03       ext4       defaults       0 0
+#/dev/mapper/archive_vg-archive_lv   /archive   ext4       defaults       0 0
+#//10.116.93.100/amar                 /amar      cifs       defaults       0 0
+/dev/mapper/datavg--u01-datalv--u01     /u01            ext4    defaults       0 0
+/dev/mapper/datavg--u02-datalv--u02     /u02            ext4    defaults       0 0
+/dev/mapper/datavg--u03-datalv--u03     /u03            ext4    defaults       0 0
+/dev/mapper/archive_vg-archive_lv       /archive        ext4    defaults       0 0
+#//10.116.93.100/amar                    /amar           cifs    defaults       0 0
+/dev/mapper/restore--vg-rest--vol       /restoration    xfs     defaults       0 0
+10.116.20.120:/mksysb     /mnt                  nfs4  defaults        0 0
+tmpfs /dev/shm tmpfs defaults,rw,nosuid,nodev,noexec 0 0
+[root@hmsi-21falcdb-td ~]# df -Th;
+Filesystem                          Type      Size  Used Avail Use% Mounted on
+devtmpfs                            devtmpfs   24G     0   24G   0% /dev
+tmpfs                               tmpfs      24G   96M   24G   1% /dev/shm
+tmpfs                               tmpfs      24G  2.3G   22G  10% /run
+tmpfs                               tmpfs      24G     0   24G   0% /sys/fs/cgroup
+/dev/mapper/rootvg-rootlv           xfs        20G   11G  9.5G  53% /
+/dev/mapper/rootvg-tmplv            xfs        10G  105M  9.9G   2% /tmp
+/dev/mapper/rootvg-varlv            xfs        10G  4.2G  5.9G  42% /var
+/dev/mapper/rootvg-optlv            xfs        10G  2.2G  7.9G  22% /opt
+/dev/mapper/rootvg-tivolilv         xfs        15G  4.8G   11G  32% /tivolimnt
+/dev/sda2                           xfs       5.0G  454M  4.6G   9% /boot
+/dev/mapper/restore--vg-rest--vol   xfs       325G  300G   25G  93% /restoration
+/dev/mapper/datavg--u01-datalv--u01 ext4       98G   73G   21G  78% /u01
+/dev/mapper/datavg--u02-datalv--u02 ext4      196G  130G   57G  70% /u02
+/dev/mapper/archive_vg-archive_lv   ext4       98G  5.5G   88G   6% /archive
+/dev/mapper/datavg--u03-datalv--u03 ext4      196G   67G  120G  36% /u03
+/dev/sda1                           vfat      2.0G  5.9M  2.0G   1% /boot/efi
+/dev/mapper/rootvg-homelv           xfs        10G  366M  9.7G   4% /home
+10.116.20.120:/mksysb               nfs4       49G   32G   16G  68% /mnt
+tmpfs                               tmpfs     4.7G     0  4.7G   0% /run/user/1041
+tmpfs                               tmpfs     4.7G  4.0K  4.7G   1% /run/user/1032
+[root@hmsi-21falcdb-td ~]# df -hT | wc -l;
+21
+[root@hmsi-21falcdb-td ~]# vgs;
+  VG         #PV #LV #SN Attr   VSize    VFree
+  archive_vg   1   1   0 wz--n- <100.00g     0
+  datavg-u01   1   1   0 wz--n- <100.00g     0
+  datavg-u02   1   1   0 wz--n- <200.00g     0
+  datavg-u03   1   1   0 wz--n- <200.00g     0
+  restore-vg   1   1   0 wz--n- <325.00g     0
+  rootvg       2   7   0 wz--n-  142.99g 57.99g
+[root@hmsi-21falcdb-td ~]# lvs;
+  LV         VG         Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  archive_lv archive_vg -wi-ao---- <100.00g
+  datalv-u01 datavg-u01 -wi-ao---- <100.00g
+  datalv-u02 datavg-u02 -wi-ao---- <200.00g
+  datalv-u03 datavg-u03 -wi-ao---- <200.00g
+  rest-vol   restore-vg -wi-ao---- <325.00g
+  homelv     rootvg     -wi-ao----   10.00g
+  optlv      rootvg     -wi-ao----   10.00g
+  rootlv     rootvg     -wi-ao----   20.00g
+  swaplv     rootvg     -wi-ao----   10.00g
+  tivolilv   rootvg     -wi-ao----   15.00g
+  tmplv      rootvg     -wi-ao----   10.00g
+  varlv      rootvg     -wi-ao----   10.00g
+[root@hmsi-21falcdb-td ~]# pvs;
+  PV         VG         Fmt  Attr PSize    PFree
+  /dev/sda3  rootvg     lvm2 a--    60.00g     0
+  /dev/sda4  rootvg     lvm2 a--   <82.99g 57.99g
+  /dev/sdb   datavg-u01 lvm2 a--  <100.00g     0
+  /dev/sdc   datavg-u02 lvm2 a--  <200.00g     0
+  /dev/sdd   datavg-u03 lvm2 a--  <200.00g     0
+  /dev/sde   archive_vg lvm2 a--  <100.00g     0
+  /dev/sdf   restore-vg lvm2 a--  <325.00g     0
+[root@hmsi-21falcdb-td ~]# fdisk -l;
+Disk /dev/sdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 200 GiB, 214748364800 bytes, 419430400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda: 150 GiB, 161061273600 bytes, 314572800 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7B292E24-64C4-4445-AE02-2D3757863B55
+
+Device         Start       End   Sectors Size Type
+/dev/sda1       2048   4196351   4194304   2G EFI System
+/dev/sda2    4196352  14682111  10485760   5G Linux filesystem
+/dev/sda3   14682112 140527615 125845504  60G Linux LVM
+/dev/sda4  140527616 314572766 174045151  83G Linux filesystem
+
+
+Disk /dev/sde: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdd: 200 GiB, 214748364800 bytes, 419430400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdf: 325 GiB, 348966092800 bytes, 681574400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+Disk /dev/mapper/rootvg-rootlv: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-swaplv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/datavg--u03-datalv--u03: 200 GiB, 214744170496 bytes, 419422208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/archive_vg-archive_lv: 100 GiB, 107369988096 bytes, 209707008 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/datavg--u01-datalv--u01: 100 GiB, 107369988096 bytes, 209707008 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/datavg--u02-datalv--u02: 200 GiB, 214744170496 bytes, 419422208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/restore--vg-rest--vol: 325 GiB, 348961898496 bytes, 681566208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-tmplv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-optlv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-varlv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-homelv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/rootvg-tivolilv: 15 GiB, 16106127360 bytes, 31457280 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdg: 16 GiB, 17179869184 bytes, 33554432 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+[root@hmsi-21falcdb-td ~]# lsblk;
+NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                         8:0    0  150G  0 disk
+├─sda1                      8:1    0    2G  0 part /boot/efi
+├─sda2                      8:2    0    5G  0 part /boot
+├─sda3                      8:3    0   60G  0 part
+│ ├─rootvg-rootlv         253:0    0   20G  0 lvm  /
+│ ├─rootvg-swaplv         253:1    0   10G  0 lvm  [SWAP]
+│ ├─rootvg-tmplv          253:7    0   10G  0 lvm  /tmp
+│ ├─rootvg-optlv          253:8    0   10G  0 lvm  /opt
+│ ├─rootvg-varlv          253:9    0   10G  0 lvm  /var
+│ └─rootvg-homelv         253:10   0   10G  0 lvm  /home
+└─sda4                      8:4    0   83G  0 part
+  ├─rootvg-rootlv         253:0    0   20G  0 lvm  /
+  └─rootvg-tivolilv       253:11   0   15G  0 lvm  /tivolimnt
+sdb                         8:16   0  100G  0 disk
+└─datavg--u01-datalv--u01 253:4    0  100G  0 lvm  /u01
+sdc                         8:32   0  200G  0 disk
+└─datavg--u02-datalv--u02 253:5    0  200G  0 lvm  /u02
+sdd                         8:48   0  200G  0 disk
+└─datavg--u03-datalv--u03 253:3    0  200G  0 lvm  /u03
+sde                         8:64   0  100G  0 disk
+└─archive_vg-archive_lv   253:2    0  100G  0 lvm  /archive
+sdf                         8:80   0  325G  0 disk
+└─restore--vg-rest--vol   253:6    0  325G  0 lvm  /restoration
+sdg                         8:96   0   16G  0 disk [SWAP]
+sr0                        11:0    1 1024M  0 rom
+[root@hmsi-21falcdb-td ~]# blkid;
+/dev/mapper/rootvg-varlv: LABEL="var" UUID="3c676c44-cc89-48b8-b1b9-d219d27100bd" BLOCK_SIZE="512" TYPE="xfs"
+/dev/sda3: UUID="6esJp8-LOku-rynX-XPQx-0a4I-b63r-GG2hH3" TYPE="LVM2_member" PARTUUID="8b5cd1c9-8aa6-437e-8d10-35fdce92b5d5"
+/dev/sda4: UUID="qnDeSC-jgoE-lOQY-en1m-LFXU-du93-I6DDXl" TYPE="LVM2_member" PARTUUID="b3d80bd7-45e9-9348-876d-ce245a8c8a2a"
+/dev/sdb: UUID="d88L5s-R9QN-9aEc-cTN0-Ysd2-M23m-kgTugV" TYPE="LVM2_member"
+/dev/sdc: UUID="DXp9oR-TYuU-bkMp-Hs1K-CBdp-fGWO-vSrdEd" TYPE="LVM2_member"
+/dev/sda1: UUID="6386-A503" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="45965cd8-4fdd-4704-8c48-6a292122ed99"
+/dev/sda2: LABEL="boot" UUID="fcea554e-42c6-48d8-9724-2ee9a57264d0" BLOCK_SIZE="512" TYPE="xfs" PARTUUID="da00159e-d021-4f41-9ee4-7520f0355218"
+/dev/sde: UUID="r8aB8P-0IEI-cgXO-yT67-PrG3-Lx4R-YmAAKR" TYPE="LVM2_member"
+/dev/sdd: UUID="Srirku-XYxX-85LI-mvZT-z3QV-vN7Y-k5oGHv" TYPE="LVM2_member"
+/dev/sdf: UUID="dKTVa0-ZOxG-d7Cm-Jp6a-MZjK-lhgk-otAThN" TYPE="LVM2_member"
+/dev/mapper/rootvg-rootlv: LABEL="root" UUID="5e4ba8f5-6f1e-478b-9dc1-eb32e2b7b2c2" BLOCK_SIZE="512" TYPE="xfs"
+/dev/mapper/rootvg-swaplv: LABEL="swap" UUID="4068aa47-6ab6-4a9f-a186-c7744be2afff" TYPE="swap"
+/dev/mapper/datavg--u03-datalv--u03: UUID="e65b3050-375e-4d22-9cc4-0f3eff969f98" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/archive_vg-archive_lv: UUID="a30b12fc-3a07-4c27-bcc5-58abad5c3b88" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/datavg--u01-datalv--u01: UUID="bedcb922-2f8a-4cea-b368-26bdfaecf76a" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/datavg--u02-datalv--u02: UUID="735b676b-69db-4d58-8aa6-0599d27618e7" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/mapper/restore--vg-rest--vol: UUID="74b96c43-3e7d-40c8-8f4b-99e47fd39560" BLOCK_SIZE="512" TYPE="xfs"
+/dev/mapper/rootvg-tmplv: LABEL="tmp" UUID="d083c760-7bd0-423d-aa08-189627195463" BLOCK_SIZE="512" TYPE="xfs"
+/dev/mapper/rootvg-optlv: LABEL="opt" UUID="f7aed237-192d-4be1-a0b6-48d7f6beaaa5" BLOCK_SIZE="512" TYPE="xfs"
+/dev/mapper/rootvg-homelv: LABEL="home" UUID="7e742cb1-ddc5-4eff-86e2-8346efc1e189" BLOCK_SIZE="512" TYPE="xfs"
+/dev/mapper/rootvg-tivolilv: UUID="0614c6c2-39f4-4ddc-82c9-71f971c283b2" BLOCK_SIZE="512" TYPE="xfs"
+/dev/sdg: UUID="0fb6ff63-3a99-4d4c-a27c-f297feefd576" TYPE="swap"
+[root@hmsi-21falcdb-td ~]# lscpu;
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              16
+On-line CPU(s) list: 0-15
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           16
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+BIOS Vendor ID:      GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Silver 4215 CPU @ 2.50GHz
+BIOS Model name:     Intel(R) Xeon(R) Silver 4215 CPU @ 2.50GHz
+Stepping:            7
+CPU MHz:             2494.140
+BogoMIPS:            4988.28
+Hypervisor vendor:   VMware
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            11264K
+NUMA node0 CPU(s):   0-15
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon nopl xtopology tsc_reliable nonstop_tsc cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xsaves arat pku ospke md_clear flush_l1d arch_capabilities
+[root@hmsi-21falcdb-td ~]# lsscsi;
+[0:0:0:0]    disk    VMware   Virtual disk     2.0   /dev/sda
+[0:0:1:0]    disk    VMware   Virtual disk     2.0   /dev/sdb
+[0:0:2:0]    disk    VMware   Virtual disk     2.0   /dev/sdc
+[0:0:3:0]    disk    VMware   Virtual disk     2.0   /dev/sdd
+[0:0:4:0]    disk    VMware   Virtual disk     2.0   /dev/sde
+[0:0:5:0]    disk    VMware   Virtual disk     2.0   /dev/sdf
+[0:0:6:0]    disk    VMware   Virtual disk     2.0   /dev/sdg
+[3:0:0:0]    cd/dvd  NECVMWar VMware SATA CD00 1.00  /dev/sr0
+[root@hmsi-21falcdb-td ~]# iptables -L;
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+LIBVIRT_INP  all  --  anywhere             anywhere
+DROP       icmp --  anywhere             anywhere             icmp timestamp-request
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+LIBVIRT_FWX  all  --  anywhere             anywhere
+LIBVIRT_FWI  all  --  anywhere             anywhere
+LIBVIRT_FWO  all  --  anywhere             anywhere
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+LIBVIRT_OUT  all  --  anywhere             anywhere
+DROP       icmp --  anywhere             anywhere             icmp timestamp-reply
+
+Chain LIBVIRT_INP (1 references)
+target     prot opt source               destination
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:67
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:bootps
+
+Chain LIBVIRT_OUT (1 references)
+target     prot opt source               destination
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:domain
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:domain
+ACCEPT     udp  --  anywhere             anywhere             udp dpt:bootpc
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:bootpc
+
+Chain LIBVIRT_FWO (1 references)
+target     prot opt source               destination
+ACCEPT     all  --  192.168.122.0/24     anywhere
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWI (1 references)
+target     prot opt source               destination
+ACCEPT     all  --  anywhere             192.168.122.0/24     ctstate RELATED,ESTABLISHED
+REJECT     all  --  anywhere             anywhere             reject-with icmp-port-unreachable
+
+Chain LIBVIRT_FWX (1 references)
+target     prot opt source               destination
+ACCEPT     all  --  anywhere             anywhere
+[root@hmsi-21falcdb-td ~]# lparstat -i ;
+bash: lparstat: command not found...
+[root@hmsi-21falcdb-td ~]# multipath -ll;
+Nov 30 11:19:08 | /etc/multipath.conf does not exist, blacklisting all devices.
+Nov 30 11:19:08 | You can run "/sbin/mpathconf --enable" to create
+Nov 30 11:19:08 | /etc/multipath.conf. See man mpathconf(8) for more details
+Nov 30 11:19:08 | DM multipath kernel driver not loaded
+[root@hmsi-21falcdb-td ~]# cat /etc/exports;
+/restoration    10.117.8.142(rw,sync,no_all_squash,root_squash)
+[root@hmsi-21falcdb-td ~]# cat /etc/resolv.conf;
+nameserver 8.8.8.8
+[root@hmsi-21falcdb-td ~]# cat /etc/hosts;
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+10.116.93.71    hmsi-21falcdb-td
+10.116.93.108  TPKBKICE
+10.116.20.120   HMSI1FSALES-T
+10.117.8.96     HMSI1DCLAPP01
+10.117.8.87     HMSI-MEELOGA-T
+[root@hmsi-21falcdb-td ~]# netstat -plunt;
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:2049            0.0.0.0:*               LISTEN      -
+tcp       33      0 127.0.0.1:51171         0.0.0.0:*               LISTEN      491183/klzagent
+tcp        0      0 127.0.0.1:42053         0.0.0.0:*               LISTEN      1602/pbx_exchange
+tcp        0      0 127.0.0.1:32839         0.0.0.0:*               LISTEN      490463/krzagent
+tcp        4      0 127.0.0.1:49103         0.0.0.0:*               LISTEN      2363/vnetd
+tcp        0      0 127.0.0.1:58991         0.0.0.0:*               LISTEN      2357/vnetd
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd
+tcp        0      0 0.0.0.0:20048           0.0.0.0:*               LISTEN      266968/rpc.mountd
+tcp        0      0 0.0.0.0:1556            0.0.0.0:*               LISTEN      1602/pbx_exchange
+tcp        0      0 10.116.93.71:1525       0.0.0.0:*               LISTEN      1693647/tnslsnr
+tcp        0      0 192.168.122.1:53        0.0.0.0:*               LISTEN      3176/dnsmasq
+tcp        0      0 127.0.0.1:1557          0.0.0.0:*               LISTEN      1602/pbx_exchange
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      157081/sshd
+tcp        0      0 0.0.0.0:13782           0.0.0.0:*               LISTEN      2181/bpcd
+tcp        0      0 0.0.0.0:35737           0.0.0.0:*               LISTEN      -
+tcp       33      0 127.0.0.1:50169         0.0.0.0:*               LISTEN      490463/krzagent
+tcp        0      0 127.0.0.1:33081         0.0.0.0:*               LISTEN      1602/pbx_exchange
+tcp       16      0 127.0.0.1:40987         0.0.0.0:*               LISTEN      2357/vnetd
+tcp       33      0 127.0.0.1:45403         0.0.0.0:*               LISTEN      489764/krzagent
+tcp        0      0 127.0.0.1:38331         0.0.0.0:*               LISTEN      489764/krzagent
+tcp        0      0 0.0.0.0:13724           0.0.0.0:*               LISTEN      1954/vnetd
+tcp        0      0 0.0.0.0:60991           0.0.0.0:*               LISTEN      297839/rpc.statd
+tcp        0      0 127.0.0.1:51807         0.0.0.0:*               LISTEN      2363/vnetd
+tcp6       0      0 :::2049                 :::*                    LISTEN      -
+tcp6       0      0 :::38979                :::*                    LISTEN      968498/ora_d000_bom
+tcp6       0      0 :::36103                :::*                    LISTEN      1691519/ora_d000_BO
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd
+tcp6       0      0 :::20048                :::*                    LISTEN      266968/rpc.mountd
+tcp6       0      0 :::1556                 :::*                    LISTEN      1602/pbx_exchange
+tcp6       0      0 :::22                   :::*                    LISTEN      157081/sshd
+tcp6       0      0 :::37431                :::*                    LISTEN      -
+tcp6       0      0 :::53499                :::*                    LISTEN      297839/rpc.statd
+tcp6       0      0 :::38399                :::*                    LISTEN      940418/ora_d000_prd
+tcp6       0      0 :::41727                :::*                    LISTEN      1688423/ora_d000_pr
+udp        0      0 192.168.122.1:53        0.0.0.0:*                           3176/dnsmasq
+udp        0      0 0.0.0.0:67              0.0.0.0:*                           3176/dnsmasq
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           1592/chronyd
+udp        0      0 127.0.0.1:791           0.0.0.0:*                           297839/rpc.statd
+udp        0      0 0.0.0.0:38213           0.0.0.0:*                           489764/krzagent
+udp        0      0 0.0.0.0:38214           0.0.0.0:*                           490463/krzagent
+udp        0      0 0.0.0.0:38215           0.0.0.0:*                           491183/klzagent
+udp        0      0 0.0.0.0:38700           0.0.0.0:*                           1755/rsyslogd
+udp        0      0 0.0.0.0:39818           0.0.0.0:*                           297839/rpc.statd
+udp        0      0 127.0.0.1:39928         0.0.0.0:*                           489764/krzagent
+udp        0      0 127.0.0.1:45209         0.0.0.0:*                           490463/krzagent
+udp        0      0 0.0.0.0:52768           0.0.0.0:*                           1755/rsyslogd
+udp        0      0 0.0.0.0:20048           0.0.0.0:*                           266968/rpc.mountd
+udp        0      0 0.0.0.0:54293           0.0.0.0:*                           -
+udp6       0      0 :::111                  :::*                                1/systemd
+udp6       0      0 ::1:323                 :::*                                1592/chronyd
+udp6       0      0 :::33471                :::*                                297839/rpc.statd
+udp6       0      0 ::1:39600               :::*                                940420/ora_s000_prd
+udp6       0      0 ::1:39698               :::*                                940418/ora_d000_prd
+udp6       0      0 ::1:44881               :::*                                1691519/ora_d000_BO
+udp6       0      0 ::1:45782               :::*                                1688407/ora_lreg_pr
+udp6       0      0 ::1:46696               :::*                                940402/ora_lreg_prd
+udp6       0      0 ::1:48703               :::*                                968500/ora_s000_bom
+udp6       0      0 :::49474                :::*                                -
+udp6       0      0 :::20048                :::*                                266968/rpc.mountd
+udp6       0      0 ::1:54099               :::*                                1688425/ora_s000_pr
+udp6       0      0 ::1:57182               :::*                                1691521/ora_s000_BO
+udp6       0      0 ::1:58060               :::*                                1688423/ora_d000_pr
+udp6       0      0 ::1:58461               :::*                                968498/ora_d000_bom
+udp6       0      0 ::1:58719               :::*                                968482/ora_lreg_bom
+udp6       0      0 ::1:59698               :::*                                1691500/ora_lreg_BO
+[root@hmsi-21falcdb-td ~]# cat /etc/sysconfig/network-scripts/ifcfg-*;
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=static
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+#IPV6INIT=yes
+#IPV6_AUTOCONF=yes
+#IPV6_DEFROUTE=yes
+#IPV6_FAILURE_FATAL=no
+NAME=ens192
+#UUID=00662331-3958-48af-bf92-e498cef2d688
+DEVICE=ens192
+ONBOOT=yes
+IPADDR=10.116.93.71
+NETMASK=255.255.255.128
+GATEWAY=10.116.93.1
+MTU=1350
+[root@hmsi-21falcdb-td ~]# sestatus;
+SELinux status:                 disabled
+[root@hmsi-21falcdb-td ~]# cat /proc/partitions;
+major minor  #blocks  name
+
+   8       16  104857600 sdb
+   8       32  209715200 sdc
+   8        0  157286400 sda
+   8        1    2097152 sda1
+   8        2    5242880 sda2
+   8        3   62922752 sda3
+   8        4   87022575 sda4
+   8       64  104857600 sde
+   8       48  209715200 sdd
+   8       80  340787200 sdf
+  11        0    1048575 sr0
+ 253        0   20971520 dm-0
+ 253        1   10485760 dm-1
+ 253        3  209711104 dm-3
+ 253        2  104853504 dm-2
+ 253        4  104853504 dm-4
+ 253        5  209711104 dm-5
+ 253        6  340783104 dm-6
+ 253        7   10485760 dm-7
+ 253        8   10485760 dm-8
+ 253        9   10485760 dm-9
+ 253       10   10485760 dm-10
+ 253       11   15728640 dm-11
+   8       96   16777216 sdg
+[root@hmsi-21falcdb-td ~]# dmidecode -t 1;
+# dmidecode 3.5
+Getting SMBIOS data from sysfs.
+SMBIOS 2.7 present.
+
+Handle 0x0001, DMI type 1, 27 bytes
+System Information
+        Manufacturer: VMware, Inc.
+        Product Name: VMware7,1
+        Version: None
+        Serial Number: VMware-42 04 bf 3f e6 63 33 a3-b2 72 2c 6f cb 5c b9 30
+        UUID: 3fbf0442-63e6-a333-b272-2c6fcb5cb930
+        Wake-up Type: Power Switch
+        SKU Number: Not Specified
+        Family: Not Specified
+
+[root@hmsi-21falcdb-td ~]# mount;
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,size=24539288k,nr_inodes=6134822,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,noexec)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/rdma type cgroup (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+none on /sys/kernel/tracing type tracefs (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/mapper/rootvg-rootlv on / type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16383)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+/dev/mapper/rootvg-tmplv on /tmp type xfs (rw,nosuid,nodev,noexec,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/mapper/rootvg-varlv on /var type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/mapper/rootvg-optlv on /opt type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/mapper/rootvg-tivolilv on /tivolimnt type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/sda2 on /boot type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/mapper/restore--vg-rest--vol on /restoration type xfs (rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/mapper/datavg--u01-datalv--u01 on /u01 type ext4 (rw,relatime)
+/dev/mapper/datavg--u02-datalv--u02 on /u02 type ext4 (rw,relatime)
+/dev/mapper/archive_vg-archive_lv on /archive type ext4 (rw,relatime)
+/dev/mapper/datavg--u03-datalv--u03 on /u03 type ext4 (rw,relatime)
+/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro)
+/dev/mapper/rootvg-homelv on /home type xfs (rw,nodev,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+10.116.20.120:/mksysb on /mnt type nfs4 (rw,relatime,vers=4.2,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.116.93.71,local_lock=none,addr=10.116.20.120)
+tmpfs on /run/user/1041 type tmpfs (rw,nosuid,nodev,relatime,size=4913672k,mode=700,uid=1041,gid=1042)
+nfsd on /proc/fs/nfsd type nfsd (rw,relatime)
+tmpfs on /run/user/1032 type tmpfs (rw,nosuid,nodev,relatime,size=4913672k,mode=700,uid=1032,gid=1033)
+[root@hmsi-21falcdb-td ~]# mount | wc -l;
+49
+[root@hmsi-21falcdb-td ~]# route -n;
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.116.93.1     0.0.0.0         UG    100    0        0 ens192
+10.116.93.0     0.0.0.0         255.255.255.128 U     100    0        0 ens192
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+[root@hmsi-21falcdb-td ~]# ip route show;
+default via 10.116.93.1 dev ens192 proto static metric 100
+10.116.93.0/25 dev ens192 proto kernel scope link src 10.116.93.71 metric 100
+192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1 linkdown
+[root@hmsi-21falcdb-td ~]# cat /etc/group;
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:admin
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+dbus:x:81:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:qemu
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+systemd-resolve:x:193:
+tss:x:59:clevis
+polkitd:x:996:
+geoclue:x:995:
+ssh_keys:x:994:
+printadmin:x:993:
+rtkit:x:172:
+pipewire:x:992:
+pulse-access:x:991:
+pulse-rt:x:990:
+pulse:x:171:
+qemu:x:107:
+clevis:x:989:
+usbmuxd:x:113:
+unbound:x:988:
+gluster:x:987:
+rpc:x:32:
+avahi:x:70:
+chrony:x:986:
+brlapi:x:985:
+setroubleshoot:x:984:
+saslauth:x:76:
+libstoragemgmt:x:983:
+libvirt:x:982:
+dnsmasq:x:981:
+radvd:x:75:
+sssd:x:980:
+cockpit-ws:x:979:
+cockpit-wsinstance:x:978:
+flatpak:x:977:
+colord:x:976:
+rpcuser:x:29:
+gdm:x:42:
+gnome-initial-setup:x:975:
+tcpdump:x:72:
+sshd:x:74:
+slocate:x:21:
+admin:x:1000:
+ibmadmin:x:1015:hmiipat1,hmiipat2,hmpmunia,hmpmbkpa,hmpmappa,hmpmiama
+hmiipat1:x:1033:
+hmiipat2:x:1034:
+hmpmunia:x:1035:
+hmpmbkpa:x:1037:
+hmpmappa:x:1038:
+hmpmappr:x:1039:
+hmpmiama:x:1040:
+hmpmunir:x:1041:
+hmpmlina:x:1042:
+hmpmlinr:x:1043:
+oinstall:x:54321:oracle
+dba:x:54322:oracle
+oper:x:54323:oracle
+backupdba:x:54324:oracle
+dgdba:x:54325:oracle
+kmdba:x:54326:oracle
+racdba:x:54330:oracle
+swiagent:x:974:
+automata:x:54331:hmiipat1
+[root@hmsi-21falcdb-td ~]# crontab -l;
+22,52 * * * * /var/opt/ansible/GTS/ILMT/bin/run_hw_CRON.sh  >/dev/null 2>&1
+0 2 * * 0 [ $(/bin/date +\%d) -le 07 ] && /var/opt/ansible/GTS/CIT/scan_aic.sh /var/opt/ansible/GTS/ILMT
+[root@hmsi-21falcdb-td ~]# systemctl --type=service --state=active,running;
+  UNIT                                                  LOAD      ACTIVE SUB     DESCRIPTION
+  accounts-daemon.service                               loaded    active running Accounts Service
+  atd.service                                           loaded    active running Job spooling tools
+  auditd.service                                        loaded    active running Security Auditing Service
+  chronyd.service                                       loaded    active running NTP client/server
+  crond.service                                         loaded    active running Command Scheduler
+  dbus.service                                          loaded    active running D-Bus System Message Bus
+  dracut-shutdown.service                               loaded    active exited  Restore /run/initramfs on shutdown
+  falcon-sensor.service                                 loaded    active running CrowdStrike Falcon Sensor
+  fnms-docker-monitor.service                           loaded    active running ManageSoft fnms-docker-monitor agent
+  fnms-podman-monitor.service                           loaded    active running ManageSoft fnms-podman-monitor agent
+  getty@tty1.service                                    loaded    active running Getty on tty1
+  gssproxy.service                                      loaded    active running GSSAPI Proxy Daemon
+  import-state.service                                  loaded    active exited  Import network configuration from initramfs
+  irqbalance.service                                    loaded    active running irqbalance daemon
+  iscsi-shutdown.service                                loaded    active exited  Logout off all iSCSI sessions on shutdown
+  ITMAgents1.lz.service                                 loaded    active running IBM Tivoli Monitoring for "/opt/IBM/ITM"
+  ITMAgents1.rz.BOM2ftest.service                       loaded    active running IBM Tivoli Monitoring for "/opt/IBM/ITM"
+  ITMAgents1.rz.prd2ftest.service                       loaded    active running IBM Tivoli Monitoring for "/opt/IBM/ITM"
+● ITMAgents1.service                                    not-found active exited  ITMAgents1.service
+  kdump.service                                         loaded    active exited  Crash recovery kernel arming
+  kmod-static-nodes.service                             loaded    active exited  Create list of required static device nodes for the current kernel
+  ksm.service                                           loaded    active exited  Kernel Samepage Merging
+  ksmtuned.service                                      loaded    active running Kernel Samepage Merging (KSM) Tuning Daemon
+  libstoragemgmt.service                                loaded    active running libstoragemgmt plug-in server daemon
+  lvm2-monitor.service                                  loaded    active exited  Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polli>
+  lvm2-pvscan@8:16.service                              loaded    active exited  LVM event activation on device 8:16
+  lvm2-pvscan@8:3.service                               loaded    active exited  LVM event activation on device 8:3
+  lvm2-pvscan@8:32.service                              loaded    active exited  LVM event activation on device 8:32
+  lvm2-pvscan@8:4.service                               loaded    active exited  LVM event activation on device 8:4
+  lvm2-pvscan@8:48.service                              loaded    active exited  LVM event activation on device 8:48
+  lvm2-pvscan@8:64.service                              loaded    active exited  LVM event activation on device 8:64
+  lvm2-pvscan@8:80.service                              loaded    active exited  LVM event activation on device 8:80
+  mcelog.service                                        loaded    active running Machine Check Exception Logging Daemon
+  mgsusageag.service                                    loaded    active exited  ManageSoft mgsusageag agent
+  ModemManager.service                                  loaded    active running Modem Manager
+  ndtask.service                                        loaded    active running ManageSoft ndtask agent
+  netbackup.service                                     loaded    active running LSB: NetBackup
+  netcf-transaction.service                             loaded    active exited  Rollback uncommitted netcf network config change transactions
+  NetworkManager-wait-online.service                    loaded    active exited  Network Manager Wait Online
+  NetworkManager.service                                loaded    active running Network Manager
+  nfs-idmapd.service                                    loaded    active running NFSv4 ID-name mapping service
+  nfs-mountd.service                                    loaded    active running NFS Mount Daemon
+  nfs-server.service                                    loaded    active exited  NFS server and services
+  nfs-utils.service                                     loaded    active exited  NFS server and client services
+  nfsdcld.service                                       loaded    active running NFSv4 Client Tracking Daemon
+  nis-domainname.service                                loaded    active exited  Read and set NIS domainname from /etc/sysconfig/network
+  packagekit.service                                    loaded    active running PackageKit Daemon
+  plymouth-quit-wait.service                            loaded    active exited  Hold until boot process finishes up
+  plymouth-quit.service                                 loaded    active exited  Terminate Plymouth Boot Screen
+  plymouth-read-write.service                           loaded    active exited  Tell Plymouth To Write Out Runtime Data
+  plymouth-start.service                                loaded    active exited  Show Plymouth Boot Screen
+  polkit.service                                        loaded    active running Authorization Manager
+  rhsmcertd.service                                     loaded    active running Enable periodic update of entitlement certificates.
+  rpc-statd-notify.service                              loaded    active exited  Notify NFS peers of a restart
+  rpc-statd.service                                     loaded    active running NFS status monitor for NFSv2/3 locking.
+  rpcbind.service                                       loaded    active running RPC Bind
+  rsyslog.service                                       loaded    active running System Logging Service
+  rtkit-daemon.service                                  loaded    active running RealtimeKit Scheduling Policy Service
+  smartd.service                                        loaded    active running Self Monitoring and Reporting Technology (SMART) Daemon
+  sshd.service                                          loaded    active running OpenSSH server daemon
+  swiagentd.service                                     loaded    active running SolarWinds Agent Service
+  sysstat.service                                       loaded    active exited  Resets System Activity Logs
+  systemd-binfmt.service                                loaded    active exited  Set Up Additional Binary Formats
+  systemd-fsck@dev-disk-by\x2duuid-6386\x2dA503.service loaded    active exited  File System Check on /dev/disk/by-uuid/6386-A503
+  systemd-journal-flush.service                         loaded    active exited  Flush Journal to Persistent Storage
+  systemd-journald.service                              loaded    active running Journal Service
+  systemd-logind.service                                loaded    active running Login Service
+  systemd-machined.service                              loaded    active running Virtual Machine and Container Registration Service
+  systemd-modules-load.service                          loaded    active exited  Load Kernel Modules
+  systemd-random-seed.service                           loaded    active exited  Load/Save Random Seed
+  systemd-remount-fs.service                            loaded    active exited  Remount Root and Kernel File Systems
+  systemd-sysctl.service                                loaded    active exited  Apply Kernel Variables
+  systemd-tmpfiles-setup-dev.service                    loaded    active exited  Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service                        loaded    active exited  Create Volatile Files and Directories
+  systemd-udev-settle.service                           loaded    active exited  udev Wait for Complete Device Initialization
+  systemd-udev-trigger.service                          loaded    active exited  udev Coldplug all Devices
+  systemd-udevd.service                                 loaded    active running udev Kernel Device Manager
+  systemd-update-utmp.service                           loaded    active exited  Update UTMP about System Boot/Shutdown
+  systemd-user-sessions.service                         loaded    active exited  Permit User Sessions
+  tuned.service                                         loaded    active running Dynamic System Tuning Daemon
+  udisks2.service                                       loaded    active running Disk Manager
+  user-runtime-dir@1032.service                         loaded    active exited  User runtime directory /run/user/1032
+  user-runtime-dir@1041.service                         loaded    active exited  User runtime directory /run/user/1041
+  user@1032.service                                     loaded    active running User Manager for UID 1032
+  user@1041.service                                     loaded    active running User Manager for UID 1041
+  vdo.service                                           loaded    active exited  VDO volume services
+  vgauthd.service                                       loaded    active running VGAuth Service for open-vm-tools
+  vmtoolsd.service                                      loaded    active running Service for virtual machines hosted on VMware
+  vxpbx_exchanged.service                               loaded    active running SYSV: Provides Veritas Private Branch Exchange
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+89 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+[root@hmsi-21falcdb-td ~]#
