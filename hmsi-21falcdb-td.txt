@@ -1,4 +1,4 @@
-  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/zones/public.xml (deflated 38%)
+hiihii  adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/zones/public.xml (deflated 38%)
   adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/zones/public.xml.old (deflated 38%)
   adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/ipsets/ (stored 0%)
   adding: root/CH117310-Precheck/conf_backup/bkp-etc/firewalld/lockdown-whitelist.xml (deflated 35%)
